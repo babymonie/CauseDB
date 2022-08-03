@@ -1,0 +1,33 @@
+{
+  "name": "causedb",
+  "version": "1.1.0",
+  "description": "a ready to made database that uses a combination of SQL and JSON. It is easy to use, making it a great choice for those who need a simple database solution.",
+  "main": "server.js",
+  "scripts": {
+    "test": "cause --start -h -p"
+  },
+  "keywords": [
+    "json",
+    "database",
+    "db"
+  ],
+  "author": "thatfriendlyasiandev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "commander": "^9.4.0",
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "linq": "^3.2.4",
+    "md5": "^2.3.0",
+    "passport": "^0.6.0",
+    "passport.socketio": "^3.7.0",
+    "socket.io": "^4.5.1"
+  },
+  "bin": {
+    "cause": "cmd.js"
+  }
+}
