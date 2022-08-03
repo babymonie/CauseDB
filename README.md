@@ -1,70 +1,56 @@
-<h1 align="center">
-	CauseDB
-</h1>
 
-<img align="center" src="https://raw.githubusercontent.com/babymonie/CauseDB/4299556fb1acc8b44b0335ff6166dd3f850c90cf/dashboard/dashboard/icons/logo_default.svg">
+# CauseDB
 
-<h3 align="center">
-	CauseDB is a database that uses a combination of SQL and JSON. It is easy to use, making it a great choice for those who need a simple database solution.
-</h3>
+![Logo](https://raw.githubusercontent.com/babymonie/CauseDB/4299556fb1acc8b44b0335ff6166dd3f850c90cf/dashboard/dashboard/icons/logo_default.svg)
 
-<p align="center">
-	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"/>
-	<img src="https://img.shields.io/github/license/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/repo-size/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/last-commit/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/languages/count/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/contributors/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/issues-raw/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/issues-closed-raw/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/issues-pr-raw/babymonie/causedb?color=green"/>
-	<img src="https://img.shields.io/github/issues-pr-closed-raw/babymonie/causedb?color=green"/>
-</p>
+CauseDB is a database that uses a combination of SQL and JSON. It is easy to use, making it a great choice for those who need a simple database solution.
 
-<p align="center">
-	<a href="#tech-stack">Tech Stack</a> •
-	<a href="#installation">Installation</a> •
-	<a href="#usage">Usage</a> • 
-	<a href="#contact">Contact</a> 
-</p>
+## Authors
 
-## Tech Stack
-<img src="https://img.shields.io/badge/Csharp-05122A?style=flat&logo=csharp" alt="csharp Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Figma-05122A?style=flat&logo=figma" alt="figma Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Flask-05122A?style=flat&logo=flask" alt="flask Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Javascript-05122A?style=flat&logo=javascript" alt="javascript Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Lua-05122A?style=flat&logo=lua" alt="lua Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Nodejs-05122A?style=flat&logo=node.js" alt="nodejs Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Photoshop-05122A?style=flat&logo=adobephotoshop" alt="photoshop Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Php-05122A?style=flat&logo=php" alt="php Badge" height="25">&nbsp;
-<img src="https://img.shields.io/badge/Python-05122A?style=flat&logo=python" alt="python Badge" height="25">&nbsp;
+- [@thatfriendlyasiandev](https://www.github.com/babymonie)
+
+
+## Badges
+
+[![Github Issues](https://img.shields.io/github/issues/babymonie/CauseDB)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+
+[![License](https://img.shields.io/github/license/babymonie/CauseDB)](https://opensource.org/licenses/)
+
+## Features
+
+- Data is stored with Json
+- Easy to use
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
 
 ## Installation
-To Install this project, follow the steps above:
+
+Install CauseDB With npm
+
 ```bash
-# install
-
-npm install causedb -g
-
+  npm install causedb -g
 ```
 
-## Usage
-To use this project, follow the steps above:
-```bash
-# Running
+## FAQ
 
-cause --help
+#### How good is the speed
 
-#start the server
+lets be honest,speed is really bad compared to other databases,which leads to another question why should i use this database?
 
-cause start --host localhost --port 80 --dashboardusername admin --dashboardpassword test123
-```
+#### Why should i use the database?
 
-## Contact
-<img align="left" src="https://avatars.githubusercontent.com/babymonie?size=100">
+First of all its, made to be used on simple projects and client and server hosted on the same device,meaning if you hosted an api in a server the database server would also,be hosted there.
 
-Made with ❤️ by [Aloy](https://github.com/babymonie), get in touch!
 
-<a href="mailto:gingy.gor@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white" alt="Email Badge" height="25"></a>&nbsp;
+## License
 
-<br clear="left"/>
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Feedback
+
+If you have any feedback, please reach out to me at gingy.gor@gmail.com
+
