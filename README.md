@@ -19,11 +19,8 @@ CauseDB is a database that uses a combination of SQL and JSON. It is easy to use
 
 ## Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
+- Data is stored with Json
+- Easy to use
 
 ## Documentation
 
