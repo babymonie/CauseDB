@@ -21,11 +21,6 @@ CauseDB is a database that uses a combination of SQL and JSON. It is easy to use
 - Data is stored with JSON
 - It's- Easy to use
 
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
-
 ## Installation
 
 Install CauseDB With npm
@@ -33,6 +28,20 @@ Install CauseDB With npm
 ```bash
 npm install causedb -g
 ```
+
+
+## Usage/Examples
+
+```bash
+  #Look at the commands
+
+  cause --help
+
+  #Run it
+
+  cause -h any hostname -p any port -du any username for the dashboard -dp any password for dashboard 
+```
+
 
 ## FAQ
 
