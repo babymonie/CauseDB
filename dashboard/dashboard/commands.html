@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commands</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/dashboard/icons/icon_default.png"
+    />
+    <script
+      src="//code.jquery.com/jquery-3.4.1.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="//unpkg.com/json-format-highlight@1.0.1/dist/json-format-highlight.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .command {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 1;
+        height: 100%;
+        flex-basis: auto;
+        width: auto;
+        margin: 0 auto;
+        background-color: #ef95cf;
+        border-radius: 10px;
+        padding: 10px;
+        position: relative;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0px 0px 10px #000;
+        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+      .command .command-header {
+        width: 100%;
+        height: 30%;
+        background-color: #7d53de;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+      }
+      .command .command-header .command-header-subtitle {
+        color: white;
+        font-family: "Prompt", sans-serif;
+        font-size: 20px;
+      }
+      .command .command-body {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: #afa2ff;
+        padding: 10px;
+      }
+      .command .command-body .command-text {
+        color: white;
+        font-family: "Prompt", sans-serif;
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        background-color: #41058c;
+        border-radius: 10px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px !important;
+      }
+      .command .command-body .message {
+        color: white;
+        font-family: "Prompt", sans-serif;
+        font-size: 20px;
+      }
+      .command-footer {
+        width: 100%;
+        height: 20%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 0;
+      }
+      .command-footer .command-footer-input {
+        width: 50%;
+        height: auto;
+        border-radius: 10px;
+        background-color: #41058c;
+        padding: 10px;
+        color: white;
+        font-family: "Prompt", sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        resize: none;
+        display: block;
+      }
+      .command-footer .command-footer-input .command-input {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: #41058c;
+        padding: 10px;
+        color: white;
+        font-family: "Prompt", sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        resize: none;
+      }
+      .command-footer .command-footer-input .command-input:focus {
+        border: none;
+        outline: none;
+      }
+      .command-footer
+        .command-footer-input
+        .command-input:focus::-webkit-input-placeholder {
+        color: white;
+      }
+      .command-footer
+        .command-footer-input
+        .command-input:focus:-moz-placeholder {
+        color: white;
+      }
+      .command-footer
+        .command-footer-input
+        .command-input:focus::-moz-placeholder {
+        color: white;
+      }
+      .command-footer
+        .command-footer-input
+        .command-input:focus:-ms-input-placeholder {
+        color: white;
+      }
+      .command-footer .message {
+        color: white;
+        font-family: "Prompt", sans-serif;
+        font-size: 20px;
+      }
+      .command-footer .command-footer-btn {
+        background-color: #41337a;
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+        font-family: "Prompt", sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: block;
+        width: 200px;
+        height: 100px;
+        -webkit-transition: all 0.5s 0.2s ease-in-out;
+        -moz-transition: all 0.5s 0.2s ease-in-out;
+        -o-transition: all 0.5s 0.2s ease-in-out;
+        transition: all 0.5s 0.2s ease-in-out;
+      }
+      .command-footer .command-footer-btn:hover {
+        background-color: #41058c;
+        color: black;
+        transform: scale(1.1);
+        width: 235px;
+        height: 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="side-bar">
+          <div class="logo">
+            <img src="icons/icon_default.png" alt="logo" />
+          </div>
+          <div class="close">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="menu">
+            <div class="item">
+              <a href="/dashboard/home"> <i class="fa fa-home"></i>Home</a>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-database"></i>Databases
+                <i class="fa fa-angle-down dropdown"></i
+              ></a>
+              <div class="dropdown-content" id="database"></div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/stats"
+                ><i class="fa-solid fa-signal"></i>Statistics</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/logs"
+                ><i class="fa-solid fa-file-word"></i>Logs</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/commands"
+                ><i class="fa-solid fa-terminal"></i>Commands</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/create"
+                ><i class="fa-solid fa-plus-circle"></i>Create</a
+              >
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-eye"></i>View<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Database</a>
+                <a href="#" class="dropdown-item">Table</a>
+                <a href="#" class="dropdown-item">Record</a>
+              </div>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-cog"></i>Settings<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Theme</a>
+              </div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/logout">
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="command">
+          <div class="command-header">
+            <div class="command-header-title bold large lead">
+              Commands
+            </div>
+            <div class="command-header-subtitle">
+              <i class="fa-solid fa-info-circle"></i>
+              <span>
+                Commands are used to execute commands on the server.
+              </span>
+            </div>
+          </div>
+          <div class="command-body">
+            All entered commands output will be below.
+            <div class="command-text"></div>
+          </div>
+          <div class="command-footer">
+            <p class="message">Messages will appear here.</p>
+            <div class="command-footer-input">
+              <input
+                type="text"
+                class="command-input"
+                placeholder="Enter command"
+              />
+            </div>
+            <button class="command-footer-btn">Execute</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".command-footer-btn").click(function () {
+          //get the value of the input
+          var command = $(".command-input").val();
+          //if the input is not empty
+          if (command != "") {
+            //send the command to the server
+            $.ajax({
+              url: "/command",
+              type: "POST",
+              data: {
+                command: command,
+              },
+              success: function (data) {
+                //if the command is executed successfully
+                if (data.success) {
+                  //if the command output is not empty
+                  if (data.message != "") {
+                    //check if default message is displayed
+                    if (
+                      $(".command-text").val() ==
+                      "All entered commands output will be displayed here."
+                    ) {
+                      $(".command-text").val("");
+                    } else {
+                      var formatted = jsonFormatHighlight(data.data);
+                      //append the command output to the textarea
+                      $(".command-text").append(
+                        "<pre>" + formatted + "</pre>" || "No output"
+                      );
+                      $(".message").text(data.message);
+                    }
+                  } else {
+                    alert("Something went wrong.");
+                  }
+                } else {
+                  //if the command is not executed successfully
+                  //append the error message to the textarea
+                  $(".message").text(data.error);
+                }
+              },
+            });
+          } else {
+            $(".message").text("Please enter a command.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

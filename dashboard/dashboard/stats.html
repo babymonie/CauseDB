@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/dashboard/icons/icon_default.png"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="side-bar">
+          <div class="logo">
+            <img src="icons/icon_default.png" alt="logo" />
+          </div>
+          <div class="close">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="menu">
+            <div class="item">
+              <a href="/dashboard/home"> <i class="fa fa-home"></i>Home</a>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-database"></i>Databases
+                <i class="fa fa-angle-down dropdown"></i
+              ></a>
+              <div class="dropdown-content" id="database"></div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/stats"
+                ><i class="fa-solid fa-signal"></i>Statistics</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/logs"
+                ><i class="fa-solid fa-file-word"></i>Logs</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/commands"
+                ><i class="fa-solid fa-terminal"></i>Commands</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/create"
+                ><i class="fa-solid fa-circle-plus"></i>Create</a
+              >
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-eye"></i>View<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Database</a>
+                <a href="#" class="dropdown-item">Table</a>
+                <a href="#" class="dropdown-item">Record</a>
+              </div>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-cog"></i>Settings<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Theme</a>
+              </div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/logout">
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="header">
+          <h1 class="bold large">Statistics</h1>
+          <p class="bold lead">
+            Here you can see your usage of CauseDB over the months.
+          </p>
+        </div>
+        <div class="stats-canvas">
+          <canvas id="canvas" width="400" height="400"></canvas>
+        </div>
+        <div class="footer">
+          <p class="lead">
+            Just put anything here.
+          </p>
+          <p class="lead">
+            You can find the source code on
+            <a href="https://github.com/babymonie/CauseDB">GitHub</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      function lightOrDark(color) {
+        // Variables for red, green, blue values
+        var r, g, b, hsp;
+
+        // Check the format of the color, HEX or RGB?
+        if (color.match(/^rgb/)) {
+          // If RGB --> store the red, green, blue values in separate variables
+          color = color.match(
+            /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/
+          );
+
+          r = color[1];
+          g = color[2];
+          b = color[3];
+        } else {
+          // If hex --> Convert it to RGB: http://gist.github.com/983661
+          color = +(
+            "0x" + color.slice(1).replace(color.length < 5 && /./g, "$&$&")
+          );
+
+          r = color >> 16;
+          g = (color >> 8) & 255;
+          b = color & 255;
+        }
+
+        // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
+        hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
+
+        // Using the HSP value, determine whether the color is light or dark
+        if (hsp > 127.5) {
+          return "light";
+        } else {
+          return "dark";
+        }
+      }
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      function getRandomColorByTheme(theme) {
+        switch (theme) {
+          case "dark":
+            for (var i = 0; i < 6; i++) {
+              var color = getRandomColor();
+              if (lightOrDark(color) == "dark") {
+                return color;
+              }
+            }
+            break;
+          case "light":
+            for (var i = 0; i < 6; i++) {
+              var color = getRandomColor();
+              if (lightOrDark(color) == "light") {
+                return color;
+              }
+            }
+            break;
+          case "casual":
+          case "retro":
+          case "floral":
+          case "minimal":
+          case "zen":
+          case "popout":
+          default:
+            return getRandomColor();
+            break;
+        }
+      }
+      function getRandomColorByNumber(lables) {
+        var colors = [];
+        for (var i = 0; i < labels.length; i++) {
+          colors.push(getRandomColor());
+        }
+        return colors;
+      }
+      alert(
+        "Statistics is currently in development, and will be available soon."
+      );
+      window.location.href = document.referrer;
+    </script>
+  </body>
+</html>

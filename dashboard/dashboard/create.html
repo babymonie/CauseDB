@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/dashboard/icons/icon_default.png"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      .info {
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 80vh;
+      }
+      .info-right {
+        text-align: right;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        background-color: #ef95cf;
+        padding: 10px;
+      }
+      .info-left {
+        text-align: left;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        background-color: #7d53de;
+        padding: 10px;
+      }
+      .title.bold.extra_large {
+        text-align: center;
+      }
+      .sub-title.bold.lead {
+        text-align: center;
+      }
+      .footer {
+        text-align: center;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        background-color: #7d53de;
+        padding: 10px;
+      }
+      .buttons {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .search {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .search input {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #7d53de;
+        padding: 10px;
+        font-size: 1.2rem;
+        background-color: #ef95cf;
+      }
+      .search button {
+        border-radius: 5px;
+        border: 1px solid #7d53de;
+        padding: 10px;
+        font-size: 1.2rem;
+        background-color: #afa2ff;
+        transition: 0.3s ease-in-out;
+        width: 100%;
+        margin-top: 25px;
+      }
+      .search button:hover {
+        background-color: #41337a;
+        color: #ffffff;
+        box-shadow: 0px 0px 10px #41337a;
+        padding: 10px;
+        animation: shake 0.5s ease-in-out infinite;
+      }
+      #view {
+        margin-top: 10px;
+        margin-right: 30px;
+        width: 235px;
+        height: 100px;
+        border-radius: 5px;
+        border: 1px solid #7d53de;
+        background-color: #ef95cf;
+        font-size: 30px;
+        font-family: "Prompt", sans-serif;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+      }
+      #view:hover {
+        background-color: #41337a;
+        color: #ffffff;
+        transform: translateY(50px) scale(1.1);
+      }
+      .info-right {
+        text-align: center;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        background-color: #ef95cf;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="side-bar">
+          <div class="logo">
+            <img src="icons/icon_default.png" alt="logo" />
+          </div>
+          <div class="close">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="menu">
+            <div class="item">
+              <a href="/dashboard/home"> <i class="fa fa-home"></i>Home</a>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-database"></i>Databases
+                <i class="fa fa-angle-down dropdown"></i
+              ></a>
+              <div class="dropdown-content" id="database"></div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/stats"
+                ><i class="fa-solid fa-signal"></i>Statistics</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/logs"
+                ><i class="fa-solid fa-file-word"></i>Logs</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/commands"
+                ><i class="fa-solid fa-terminal"></i>Commands</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/create"
+                ><i class="fa-solid fa-circle-plus"></i>Create</a
+              >
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-eye"></i>View<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Database</a>
+                <a href="#" class="dropdown-item">Table</a>
+                <a href="#" class="dropdown-item">Record</a>
+              </div>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-cog"></i>Settings<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Theme</a>
+              </div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/logout">
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="info">
+        <div class="info-left">
+          <div class="title bold extra_large">
+            Create
+          </div>
+          <div class="sub-title bold lead">
+            <i class="fa-solid fa-info-circle"></i> Create Anything
+          </div>
+          <div class="footer">
+            <div class="text-center">
+              <i class="fa-solid fa-info-circle"></i>
+              <span>
+                Create Tables,Databases,Records without commands or a driver
+              </span>
+            </div>
+            <div class="buttons">
+              <button class="btn btn-primary btn-lg" id="view">
+                Scroll down
+              </button>
+              <div class="search">
+                <input type="text" placeholder="Search" id="search_input" />
+                <button class="btn btn-primary" id="search_button">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-right">
+          <div class="types"></div>
+        </div>
+      </div>
+      <div class="products"></div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+      alert("Create is currently in development, and will be available soon.");
+      window.location.href = document.referrer;
+    </script>
+  </body>
+</html>

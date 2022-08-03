@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baseplate</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/dashboard/icons/icon_default.png"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="side-bar">
+          <div class="logo">
+            <img src="icons/icon_default.png" alt="logo" />
+          </div>
+          <div class="close">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="menu">
+            <div class="item">
+              <a href="/dashboard/home"> <i class="fa fa-home"></i>Home</a>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-database"></i>Databases
+                <i class="fa fa-angle-down dropdown"></i
+              ></a>
+              <div class="dropdown-content" id="database"></div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/stats"
+                ><i class="fa-solid fa-signal"></i>Statistics</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/logs"
+                ><i class="fa-solid fa-file-word"></i>Logs</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/commands"
+                ><i class="fa-solid fa-terminal"></i>Commands</a
+              >
+            </div>
+            <div class="item">
+              <a href="/dashboard/create"
+                ><i class="fa-solid fa-circle-plus"></i>Create</a
+              >
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-eye"></i>View<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Database</a>
+                <a href="#" class="dropdown-item">Table</a>
+                <a href="#" class="dropdown-item">Record</a>
+              </div>
+            </div>
+            <div class="item">
+              <a class="side-btn"
+                ><i class="fa-solid fa-cog"></i>Settings<i
+                  class="fa fa-angle-down dropdown"
+                ></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Theme</a>
+              </div>
+            </div>
+            <div class="item">
+              <a href="/dashboard/logout">
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content"></div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
