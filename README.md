@@ -1,4 +1,3 @@
-
 # CauseDB
 
 ![Logo](https://raw.githubusercontent.com/babymonie/CauseDB/4299556fb1acc8b44b0335ff6166dd3f850c90cf/dashboard/dashboard/icons/logo_default.svg)
@@ -19,8 +18,8 @@ CauseDB is a database that uses a combination of SQL and JSON. It is easy to use
 
 ## Features
 
-- Data is stored with Json
-- Easy to use
+- Data is stored with JSON
+- It's- Easy to use
 
 ## Documentation
 
@@ -32,18 +31,18 @@ CauseDB is a database that uses a combination of SQL and JSON. It is easy to use
 Install CauseDB With npm
 
 ```bash
-  npm install causedb -g
+npm install causedb -g
 ```
 
 ## FAQ
 
 #### How good is the speed
 
-lets be honest,speed is really bad compared to other databases,which leads to another question why should i use this database?
+let's be honest, speed is really bad compared to other databases, which leads to another question why should i use this database?
 
 #### Why should i use the database?
 
-First of all its, made to be used on simple projects and client and server hosted on the same device,meaning if you hosted an api in a server the database server would also,be hosted there.
+First of all, made to be used on simple projects, and the client and server are hosted on the same device, meaning if you hosted an API in a server the database server would also, be hosted there.
 
 
 ## License
@@ -53,4 +52,3 @@ First of all its, made to be used on simple projects and client and server hoste
 ## Feedback
 
 If you have any feedback, please reach out to me at gingy.gor@gmail.com
-
