@@ -2,7 +2,7 @@
 	CauseDB
 </h1>
 
-![Logo](https://raw.githubusercontent.com/babymonie/CauseDB/4299556fb1acc8b44b0335ff6166dd3f850c90cf/dashboard/dashboard/icons/logo_default.svg)
+<img align="center" src="https://raw.githubusercontent.com/babymonie/CauseDB/4299556fb1acc8b44b0335ff6166dd3f850c90cf/dashboard/dashboard/icons/logo_default.svg">
 
 <h3 align="center">
 	CauseDB is a database that uses a combination of SQL and JSON. It is easy to use, making it a great choice for those who need a simple database solution.
