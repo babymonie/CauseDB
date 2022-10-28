@@ -15,6 +15,7 @@ CauseDB is a database that uses a combination of SQL and JSON. It is easy to use
 
 
 [![License](https://img.shields.io/github/license/babymonie/CauseDB)](https://opensource.org/licenses/)
+[![Verified on Openbase](https://badges.openbase.com/js/verified/causedb.svg?token=mBNq23bN4CcEg2kCjJuWqx7XjrbLRf3XDaGsAHSHfqg=)](https://openbase.com/js/causedb?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 
 ## Features
 
