@@ -18,6 +18,8 @@ CauseDB is a database that uses a combination of SQL and JSON. It is easy to use
 
 [![Verified on Openbase](https://badges.openbase.com/js/verified/causedb.svg?token=mBNq23bN4CcEg2kCjJuWqx7XjrbLRf3XDaGsAHSHfqg=)](https://openbase.com/js/causedb?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 
+[![causedb Versions](https://badges.openbase.com/js/versions/causedb.svg?token=mBNq23bN4CcEg2kCjJuWqx7XjrbLRf3XDaGsAHSHfqg=)](https://openbase.com/js/causedb?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
+
 ## Features
 
 - Data is stored with JSON
